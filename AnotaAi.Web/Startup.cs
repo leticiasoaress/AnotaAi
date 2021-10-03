@@ -49,17 +49,26 @@ namespace AnotaAi.Web
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
 
             services.AddControllers();
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "AnotaAi", Version = "v1" }); });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "AnotaAi",
+                    Version = "v1",
+                    Description = "Projeto de comanda eletrônica com ASP.Net Core"
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AnotaAi v1"));
-            }
+                c.RoutePrefix = "swagger";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "AnotaAi - API");
+            });
 
             app.UseHttpsRedirection();
             app.UseRouting();
