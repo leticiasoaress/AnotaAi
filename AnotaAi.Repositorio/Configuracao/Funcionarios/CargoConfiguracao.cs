@@ -17,9 +17,6 @@ namespace AnotaAi.Repositorio.Configuracao
             builder.Property(c => c.Descricao)
                    .IsRequired()
                    .HasMaxLength(150);
-
-            builder.Property(c => c.Ativo)
-                   .IsRequired();
         }
     }
 }

@@ -6,7 +6,6 @@ namespace AnotaAi.Dominio.Entidades.Funcionarios
     {
         public int Id { get; set; }
         public DateTime DataContratacao { get; set; }
-        public bool Ativo { get; set; }
 
         public int CargoId { get; set; }
         public virtual Cargo Cargo { get; set; }

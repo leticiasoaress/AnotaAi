@@ -13,9 +13,6 @@ namespace AnotaAi.Repositorio.Configuracao
             builder.Property(f => f.DataContratacao)
                    .IsRequired();
 
-            builder.Property(f => f.Ativo)
-                   .IsRequired();
-
             builder.HasOne(f => f.Cargo);
 
             builder.HasOne(f => f.Pessoa);

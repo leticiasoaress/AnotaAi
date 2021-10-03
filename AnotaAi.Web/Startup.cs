@@ -21,13 +21,20 @@ namespace AnotaAi.Web
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+
+            if (env.IsDevelopment())
+            {
+                var builder = new ConfigurationBuilder();
+                builder.AddUserSecrets<Startup>();
+                Configuration = builder.Build();
+            }
         }
 
         public void ConfigureServices(IServiceCollection services)
-        {
+        {           
             var connectionString = Configuration.GetConnectionString("AnotaAiDataBase");
 
             services.AddDbContext<AppDbContext>(option =>
@@ -55,7 +62,7 @@ namespace AnotaAi.Web
                 {
                     Title = "AnotaAi",
                     Version = "v1",
-                    Description = "Projeto de comanda eletrônica com ASP.Net Core"
+                    Description = "Projeto de comanda eletronica com ASP.Net Core - Web Api."
                 });
             });
         }
