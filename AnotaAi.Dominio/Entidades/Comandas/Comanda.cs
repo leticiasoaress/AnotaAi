@@ -16,5 +16,16 @@ namespace AnotaAi.Dominio.Entidades.Comandas
 
         public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
+
+        public void Atualizar(Comanda comanda)
+        {
+            NumeroMesa = comanda.NumeroMesa;
+            NomeCliente = comanda.NomeCliente;
+            ValorTotal = comanda.ValorTotal;
+            ValorDesconto = comanda.ValorDesconto;
+            ValorPago = comanda.ValorPago;
+            StatusId = comanda.StatusId;
+            UsuarioId = comanda.UsuarioId;
+        }
     }
 }

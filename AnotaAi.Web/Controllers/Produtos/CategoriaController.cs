@@ -75,9 +75,9 @@ namespace AnotaAi.Web.Controllers.Produtos
         {
             try
             {
-                if (id != categoria.Id)
+                if (id <= 0)
                 {
-                    return BadRequest("Não é permitido alterar o código da categoria.");
+                    return BadRequest("Código da categoria não é válido.");
                 }
 
                 var categoriaExistente = _categoriaRepositorio.ObterPorId(id);
@@ -86,10 +86,11 @@ namespace AnotaAi.Web.Controllers.Produtos
                     return NotFound($"Nenhuma categoria localizada com código: {id}.");
                 }
 
-                categoria.Id = id;
-                _categoriaRepositorio.Atualizar(categoria);
+                categoriaExistente.Atualizar(categoria.Nome, categoria.Descricao);
 
-                return Ok(categoria);
+                _categoriaRepositorio.Atualizar(categoriaExistente);
+
+                return Ok(categoriaExistente);
             }
             catch (Exception ex)
             {

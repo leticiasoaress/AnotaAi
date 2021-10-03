@@ -12,5 +12,11 @@ namespace AnotaAi.Dominio.Entidades.Funcionarios
 
         public int PessoaId { get; set; }
         public virtual Pessoa Pessoa { get; set; }
+
+        public void Atualizar(DateTime dataContratacao, int cargoId)
+        {
+            DataContratacao = dataContratacao;
+            CargoId = cargoId;
+        }
     }
 }

@@ -10,5 +10,13 @@
 
         public int FuncionarioId { get; set; }
         public virtual Funcionario Funcionario { get; set; }
+
+        public void Atualizar(Usuario usuario)
+        {
+            Login = usuario.Login;
+            Senha = usuario.Senha;
+            IsMaster = usuario.IsMaster;
+            Ativo = usuario.Ativo;
+        }
     }
 }

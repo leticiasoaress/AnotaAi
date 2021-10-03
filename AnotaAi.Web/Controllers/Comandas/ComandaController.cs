@@ -75,9 +75,9 @@ namespace AnotaAi.Web.Controllers.Comandas
         {
             try
             {
-                if (id != comanda.Id)
+                if (id <= 0)
                 {
-                    return BadRequest("Não é permitido alterar o código da comanda.");
+                    return BadRequest("Código da comanda não é válido.");
                 }
 
                 var comandaExistente = _comandaRepositorio.ObterPorId(id);
@@ -86,10 +86,11 @@ namespace AnotaAi.Web.Controllers.Comandas
                     return NotFound($"Nenhuma comanda localizada com código: {id}.");
                 }
 
-                comanda.Id = id;
-                _comandaRepositorio.Atualizar(comanda);
+                comandaExistente.Atualizar(comanda);
 
-                return Ok(comanda);
+                _comandaRepositorio.Atualizar(comandaExistente);
+
+                return Ok(comandaExistente);
             }
             catch (Exception ex)
             {

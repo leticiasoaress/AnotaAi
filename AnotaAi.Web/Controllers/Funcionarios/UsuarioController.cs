@@ -75,9 +75,9 @@ namespace AnotaAi.Web.Controllers.Funcionarios
         {
             try
             {
-                if (id != usuario.Id)
+                if (id <= 0)
                 {
-                    return BadRequest("Não é permitido alterar o código do usuario.");
+                    return BadRequest("Código do usuario não é válido.");
                 }
 
                 var usuarioExistente = _usuarioRepositorio.ObterPorId(id);
@@ -86,10 +86,11 @@ namespace AnotaAi.Web.Controllers.Funcionarios
                     return NotFound($"Nenhum usuario localizado com código: {id}.");
                 }
 
-                usuario.Id = id;
-                _usuarioRepositorio.Atualizar(usuario);
+                usuarioExistente.Atualizar(usuario);
 
-                return Ok(usuario);
+                _usuarioRepositorio.Atualizar(usuarioExistente);
+
+                return Ok(usuarioExistente);
             }
             catch (Exception ex)
             {

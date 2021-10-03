@@ -1,0 +1,1042 @@
+{
+	"info": {
+		"_postman_id": "999914fb-dbfd-4d49-902f-85a93c0db399",
+		"name": "AnotaAi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Comandas",
+			"item": [
+				{
+					"name": "Comanda",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/comanda",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"comanda"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/comanda/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"comanda",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"numeroMesa\": 1,\r\n    \"nomeCliente\": \"Rafaella\",\r\n    \"valorTotal\": 0,\r\n    \"valorDesconto\": 0,\r\n    \"valorPago\": 0,\r\n    \"statusId\": 1,\r\n    \"usuarioId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/comanda",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"comanda"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"numeroMesa\": 0,\r\n    \"nomeCliente\": \"string\",\r\n    \"valorTotal\": 0,\r\n    \"valorDesconto\": 0,\r\n    \"valorPago\": 0,\r\n    \"statusId\": 0,\r\n    \"usuarioId\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/comanda/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"comanda",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/comanda/5",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"comanda",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Item Comanda",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/itemComanda",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"itemComanda"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/itemComanda/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"itemComanda",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"quantidade\": 2,\r\n    \"comandaId\": 1,\r\n    \"produtoId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/itemComanda",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"itemComanda"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"quantidade\": 2,\r\n    \"comandaId\": 1,\r\n    \"produtoId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/itemComanda/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"itemComanda",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/itemComanda/5",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"itemComanda",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/itemComanda/ObterPorComanda/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"itemComanda",
+										"ObterPorComanda",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Status",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/status",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/status/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"status",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Cancelado\",\r\n  \"descricao\": \"Pedido cancelado.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/status",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Finalizado\",\r\n  \"descricao\": \"Comanda finalizada\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/status/5",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"status",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/status/5",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"status",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Funcionarios",
+			"item": [
+				{
+					"name": "Cargo",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/cargo",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"cargo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/cargo/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"cargo",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Administrador\",\r\n  \"descricao\": \"Responsável por realizar o gerenciamento dos logins.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/cargo",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"cargo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Atentende\",\r\n  \"descricao\": \"Responsável por realizar os pedidos.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/cargo/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"cargo",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/cargo/6",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"cargo",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Funcionario",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/funcionario",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"funcionario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/funcionario/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"funcionario",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dataContratacao\": \"2021-10-03T17:39:26.822Z\",\r\n    \"cargoId\": 2,\r\n    \"pessoaId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/funcionario",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"funcionario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dataContratacao\": \"2021-10-03T17:39:26.822Z\",\r\n    \"cargoId\": 1,\r\n    \"pessoaId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/funcionario/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"funcionario",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/funcionario/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"funcionario",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pessoa",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/pessoa",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"pessoa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/pessoa/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"pessoa",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Theo Paulo Luiz Nunes\",\r\n    \"cpf\": \"29407537099\",\r\n    \"dataNascimento\": \"1982-03-03T00:00:00.000Z\",\r\n    \"email\": \"theopauloluiznunes-91@dhl.com\",\r\n    \"cep\": \"19023420\",\r\n    \"estado\": \"SP\",\r\n    \"cidade\": \"Presidente Prudente\",\r\n    \"logradouro\": \"Rua Dom Pedro I\",\r\n    \"numero\": \"998\",\r\n    \"bairro\": \"Jardim Paulista\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/pessoa",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"pessoa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Theo Paulo Luiz\",\r\n    \"cpf\": \"29407537099\",\r\n    \"dataNascimento\": \"1982-03-03T00:00:00.000Z\",\r\n    \"email\": \"theopauloluiznunes-91@dhl.com\",\r\n    \"cep\": \"19023420\",\r\n    \"estado\": \"SP\",\r\n    \"cidade\": \"Presidente Prudente\",\r\n    \"logradouro\": \"Rua Dom Pedro I\",\r\n    \"numero\": \"998\",\r\n    \"bairro\": \"Jardim Paulista\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/pessoa/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"pessoa",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/pessoa/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"pessoa",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Usuario",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/usuario",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"usuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/usuario/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"usuario",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"login\": \"theopauloluiznunes-91@dhl.com\",\r\n    \"senha\": \"teste\",\r\n    \"isMaster\": true,\r\n    \"ativo\": true,\r\n    \"funcionarioId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/usuario",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"usuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"login\": \"theopauloluiznunes-91@dhl.com\",\r\n    \"senha\": \"teste\",\r\n    \"isMaster\": false,\r\n    \"ativo\": true,\r\n    \"funcionarioId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/usuario/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"usuario",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/usuario/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"usuario",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Categoria",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/categoria",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"categoria"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/categoria/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"categoria",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Lanches\",\r\n    \"descricao\": \"Hamburguer, pizzas, petisco e porções.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/categoria",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"categoria"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"string\",\r\n    \"descricao\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/categoria/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"categoria",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/categoria/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"categoria",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Produto",
+					"item": [
+						{
+							"name": "Listar Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/produto",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"produto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/produto/2",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"produto",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Budweiser\",\r\n    \"descricao\": \"Long Neck\",\r\n    \"valor\": 4.50,\r\n    \"categoriaId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/produto",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"produto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Brahma Duplo Malte\",\r\n    \"descricao\": \"Litrão\",\r\n    \"valor\": 8.50,\r\n    \"categoriaId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/produto/1",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"produto",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AnotaAi-endpoint}}/produto/3",
+									"host": [
+										"{{AnotaAi-endpoint}}"
+									],
+									"path": [
+										"produto",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

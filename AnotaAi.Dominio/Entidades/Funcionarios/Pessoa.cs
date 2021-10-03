@@ -14,5 +14,19 @@ namespace AnotaAi.Dominio.Entidades.Funcionarios
         public string Cidade { get; set; }
         public string Logradouro { get; set; }
         public string Numero { get; set; }
+        public string Bairro { get; set; }
+
+        public void Atualizar(Pessoa pessoa)
+        {
+            Nome = pessoa.Nome;
+            DataNascimento = pessoa.DataNascimento;
+            Email = pessoa.Email;
+            CEP = pessoa.CEP;
+            Estado = pessoa.Estado;
+            Cidade = pessoa.Cidade;
+            Logradouro = pessoa.Logradouro;
+            Numero = pessoa.Numero;
+            Bairro = pessoa.Bairro;
+        }
     }
 }

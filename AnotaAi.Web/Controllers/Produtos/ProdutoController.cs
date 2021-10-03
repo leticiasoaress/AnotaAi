@@ -75,21 +75,22 @@ namespace AnotaAi.Web.Controllers.Produtos
         {
             try
             {
-                if (id != produto.Id)
+                if (id <= 0)
                 {
                     return BadRequest("Não é permitido alterar o código do produto.");
                 }
 
-                var cargoExistente = _produtoRepositorio.ObterPorId(id);
-                if (cargoExistente is null)
+                var produtoExistente = _produtoRepositorio.ObterPorId(id);
+                if (produtoExistente is null)
                 {
                     return NotFound($"Nenhum produto localizado com código: {id}.");
                 }
 
-                produto.Id = id;
-                _produtoRepositorio.Atualizar(produto);
+                produtoExistente.Atualizar(produto);
 
-                return Ok(produto);
+                _produtoRepositorio.Atualizar(produtoExistente);
+
+                return Ok(produtoExistente);
             }
             catch (Exception ex)
             {

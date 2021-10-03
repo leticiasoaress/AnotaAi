@@ -75,9 +75,9 @@ namespace AnotaAi.Web.Controllers.Funcionarios
         {
             try
             {
-                if (id != cargo.Id)
+                if(id <= 0)
                 {
-                    return BadRequest("Não é permitido alterar o código do cargo.");
+                    return BadRequest("Código do cargo não é válido.");
                 }
 
                 var cargoExistente = _cargoRepositorio.ObterPorId(id);
@@ -86,10 +86,11 @@ namespace AnotaAi.Web.Controllers.Funcionarios
                     return NotFound($"Nenhum cargo localizado com código: {id}.");
                 }
 
-                cargo.Id = id;
-                _cargoRepositorio.Atualizar(cargo);
+                cargoExistente.Atualizar(cargo.Nome, cargo.Descricao);
 
-                return Ok(cargo);
+                _cargoRepositorio.Atualizar(cargoExistente);
+
+                return Ok(cargoExistente);
             }
             catch (Exception ex)
             {

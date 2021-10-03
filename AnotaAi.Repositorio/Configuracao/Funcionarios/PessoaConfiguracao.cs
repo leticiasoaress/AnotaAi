@@ -44,6 +44,10 @@ namespace AnotaAi.Repositorio.Configuracao
             builder.Property(p => p.Numero)
                    .IsRequired()
                    .HasMaxLength(25);
+
+            builder.Property(p => p.Bairro)
+                   .IsRequired()
+                   .HasMaxLength(100);
         }
     }
 }

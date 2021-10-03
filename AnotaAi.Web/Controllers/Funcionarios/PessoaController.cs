@@ -75,9 +75,9 @@ namespace AnotaAi.Web.Controllers.Funcionarios
         {
             try
             {
-                if (id != pessoa.Id)
+                if (id <= 0)
                 {
-                    return BadRequest("Não é permitido alterar o código da pessoa.");
+                    return BadRequest("Código da pessoa não é válido.");
                 }
 
                 var pessoaExistente = _pessoaRepositorio.ObterPorId(id);
@@ -86,10 +86,11 @@ namespace AnotaAi.Web.Controllers.Funcionarios
                     return NotFound($"Nenhuma pessoa localizada com código: {id}.");
                 }
 
-                pessoa.Id = id;
-                _pessoaRepositorio.Atualizar(pessoa);
+                pessoaExistente.Atualizar(pessoa);
 
-                return Ok(pessoa);
+                _pessoaRepositorio.Atualizar(pessoaExistente);
+
+                return Ok(pessoaExistente);
             }
             catch (Exception ex)
             {

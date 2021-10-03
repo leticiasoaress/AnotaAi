@@ -1,5 +1,6 @@
 ﻿using AnotaAi.Dominio.Interface.Respositorios.Base;
 using AnotaAi.Repositorio.Contexto;
+
 using System.Collections.Generic;
 using System.Linq;
 

@@ -75,9 +75,9 @@ namespace AnotaAi.Web.Controllers.Comandas
         {
             try
             {
-                if (id != status.Id)
+                if (id <= 0)
                 {
-                    return BadRequest("Não é permitido alterar o código do status.");
+                    return BadRequest("Código do status não é válido.");
                 }
 
                 var statusExistente = _statusRepositorio.ObterPorId(id);
@@ -86,10 +86,11 @@ namespace AnotaAi.Web.Controllers.Comandas
                     return NotFound($"Nenhum status localizado com código: {id}.");
                 }
 
-                status.Id = id;
-                _statusRepositorio.Atualizar(status);
+                statusExistente.Atualizar(status.Nome, status.Descricao);
 
-                return Ok(status);
+                _statusRepositorio.Atualizar(statusExistente);
+
+                return Ok(statusExistente);
             }
             catch (Exception ex)
             {

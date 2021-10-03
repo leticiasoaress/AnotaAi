@@ -67,7 +67,7 @@ namespace AnotaAi.Web.Controllers.Funcionarios
         }
 
         [HttpPut("{id}")]
-        [ProducesResponseType(typeof(Cargo), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Funcionario), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -75,21 +75,22 @@ namespace AnotaAi.Web.Controllers.Funcionarios
         {
             try
             {
-                if (id != funcionario.Id)
+                if (id <= 0)
                 {
-                    return BadRequest("Não é permitido alterar o código do cargo.");
+                    return BadRequest("Código do funcionario não é válido.");
                 }
 
-                var cargoExistente = _funcionarioRepositorio.ObterPorId(id);
-                if (cargoExistente is null)
+                var funcionarioExistente = _funcionarioRepositorio.ObterPorId(id);
+                if (funcionarioExistente is null)
                 {
                     return NotFound($"Nenhum funcionario localizado com código: {id}.");
                 }
 
-                funcionario.Id = id;
-                _funcionarioRepositorio.Atualizar(funcionario);
+                funcionarioExistente.Atualizar(funcionario.DataContratacao, funcionario.CargoId);
 
-                return Ok(funcionario);
+                _funcionarioRepositorio.Atualizar(funcionarioExistente);
+
+                return Ok(funcionarioExistente);
             }
             catch (Exception ex)
             {

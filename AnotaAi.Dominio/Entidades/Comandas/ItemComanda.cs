@@ -12,5 +12,10 @@ namespace AnotaAi.Dominio.Entidades.Comandas
 
         public int ProdutoId { get; set; }
         public virtual Produto Produto { get; set; }
+
+        public void Atualizar(int quantidade)
+        {
+            Quantidade = quantidade;
+        }
     }
 }

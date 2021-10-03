@@ -9,5 +9,13 @@
 
         public int CategoriaId { get; set; }
         public virtual Categoria Categoria { get; set; }
+
+        public void Atualizar(Produto produto)
+        {
+            Nome = produto.Nome;
+            Descricao = produto.Descricao;
+            Valor = produto.Valor;
+            CategoriaId = produto.CategoriaId;
+        }
     }
 }
