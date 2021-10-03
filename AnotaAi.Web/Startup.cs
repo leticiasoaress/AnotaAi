@@ -24,13 +24,6 @@ namespace AnotaAi.Web
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
-
-            if (env.IsDevelopment())
-            {
-                var builder = new ConfigurationBuilder();
-                builder.AddUserSecrets<Startup>();
-                Configuration = builder.Build();
-            }
         }
 
         public void ConfigureServices(IServiceCollection services)
